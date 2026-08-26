@@ -1,0 +1,17 @@
+{
+  "name": "veda-ai",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "dev": "npm run dev --workspace=web",
+    "build": "npm run build --workspace=web",
+    "lint": "npm run lint --workspace=web",
+    "check-types": "npm run check-types --workspace=web"
+  }
+}
