@@ -237,23 +237,22 @@ export function AssessmentUpload() {
   return (
     <main
       className="bg-background"
-      style={{ height: "100vh", maxHeight: 800, overflow: "hidden" }}
+      style={{ minHeight: "100vh", overflow: "auto" }}
     >
       <TopNav />
 
       <section
         className="upload-section mx-auto flex flex-col items-center justify-center px-6 py-12"
         style={{
-          height: "calc(100vh - 56px)",
-          maxHeight: "744px",
-          minHeight: 0,
+          minHeight: "calc(100vh - 56px)",
           overflowY: "auto",
         }}
       >
         <div
           className="upload-container"
           style={{
-            width: 789,
+            width: "100%",
+            maxWidth: 789,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -271,7 +270,7 @@ export function AssessmentUpload() {
                 justifyContent: "center",
                 gap: 8,
                 marginBottom: 0,
-                marginTop: 120,
+                marginTop: "clamp(40px, 8vh, 120px)",
               }}
             >
               <span
@@ -375,7 +374,8 @@ export function AssessmentUpload() {
               className="dropzone-row"
               style={{
                 background: "rgba(255, 255, 255, 0.5)",
-                width: 823,
+                width: "100%",
+                maxWidth: 823,
                 borderRadius: 24,
                 padding: 12,
                 gap: 10,
@@ -470,22 +470,30 @@ export function AssessmentUpload() {
             }
 
             /* ── Responsive upload layout ───────────────────────── */
-            @media (max-width: 767px) {
-              .upload-section {
-                min-height: calc(100vh - 56px);
-                padding-left: 16px !important;
-                padding-right: 16px !important;
-              }
-              .upload-container {
-                width: 100% !important;
+
+            /* Tablet: stack dropzone columns */
+            @media (max-width: 900px) {
+              .dropzone-row {
+                flex-direction: column !important;
               }
               .upload-heading span {
-                font-size: 28px !important;
+                font-size: 32px !important;
               }
-              .dropzone-row {
-                width: 100% !important;
-                height: auto !important;
-                flex-direction: column !important;
+            }
+
+            /* Mobile */
+            @media (max-width: 767px) {
+              .upload-section {
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+                padding-top: 24px !important;
+                padding-bottom: 24px !important;
+              }
+              .upload-heading {
+                margin-top: 40px !important;
+              }
+              .upload-heading span {
+                font-size: 26px !important;
               }
             }
           `}</style>
