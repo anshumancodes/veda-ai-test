@@ -8,42 +8,10 @@ const navItems = [
     active: false,
     icon: (
       <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
-        <rect
-          x="1.5"
-          y="1.5"
-          width="5"
-          height="5"
-          rx="1"
-          stroke="currentColor"
-          strokeWidth="1.3"
-        />
-        <rect
-          x="9.5"
-          y="1.5"
-          width="5"
-          height="5"
-          rx="1"
-          stroke="currentColor"
-          strokeWidth="1.3"
-        />
-        <rect
-          x="1.5"
-          y="9.5"
-          width="5"
-          height="5"
-          rx="1"
-          stroke="currentColor"
-          strokeWidth="1.3"
-        />
-        <rect
-          x="9.5"
-          y="9.5"
-          width="5"
-          height="5"
-          rx="1"
-          stroke="currentColor"
-          strokeWidth="1.3"
-        />
+        <rect x="1.5" y="1.5" width="5" height="5" rx="1" stroke="currentColor" strokeWidth="1.3" />
+        <rect x="9.5" y="1.5" width="5" height="5" rx="1" stroke="currentColor" strokeWidth="1.3" />
+        <rect x="1.5" y="9.5" width="5" height="5" rx="1" stroke="currentColor" strokeWidth="1.3" />
+        <rect x="9.5" y="9.5" width="5" height="5" rx="1" stroke="currentColor" strokeWidth="1.3" />
       </svg>
     ),
   },
@@ -52,21 +20,8 @@ const navItems = [
     active: false,
     icon: (
       <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
-        <rect
-          x="1"
-          y="3"
-          width="14"
-          height="9"
-          rx="1.5"
-          stroke="currentColor"
-          strokeWidth="1.3"
-        />
-        <path
-          d="M6 12v2M10 12v2M4 14h8"
-          stroke="currentColor"
-          strokeWidth="1.3"
-          strokeLinecap="round"
-        />
+        <rect x="1" y="3" width="14" height="9" rx="1.5" stroke="currentColor" strokeWidth="1.3" />
+        <path d="M6 12v2M10 12v2M4 14h8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
       </svg>
     ),
   },
@@ -75,21 +30,8 @@ const navItems = [
     active: false,
     icon: (
       <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
-        <rect
-          x="3"
-          y="1.5"
-          width="10"
-          height="13"
-          rx="1.5"
-          stroke="currentColor"
-          strokeWidth="1.3"
-        />
-        <path
-          d="M6 5h4M6 8h4M6 11h2"
-          stroke="currentColor"
-          strokeWidth="1.3"
-          strokeLinecap="round"
-        />
+        <rect x="3" y="1.5" width="10" height="13" rx="1.5" stroke="currentColor" strokeWidth="1.3" />
+        <path d="M6 5h4M6 8h4M6 11h2" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
       </svg>
     ),
   },
@@ -98,21 +40,8 @@ const navItems = [
     active: true,
     icon: (
       <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
-        <rect
-          x="2"
-          y="2"
-          width="12"
-          height="12"
-          rx="1.5"
-          stroke="currentColor"
-          strokeWidth="1.3"
-        />
-        <path
-          d="M2 6h12M6 6v8"
-          stroke="currentColor"
-          strokeWidth="1.3"
-          strokeLinecap="round"
-        />
+        <rect x="2" y="2" width="12" height="12" rx="1.5" stroke="currentColor" strokeWidth="1.3" />
+        <path d="M2 6h12M6 6v8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
       </svg>
     ),
   },
@@ -122,13 +51,7 @@ const navItems = [
     icon: (
       <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
         <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.3" />
-        <path
-          d="M8 5v3.5l2 1.5"
-          stroke="currentColor"
-          strokeWidth="1.3"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+        <path d="M8 5v3.5l2 1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
   },
@@ -140,17 +63,22 @@ export function Sidebar() {
       <aside
         id="app-sidebar"
         style={{
-          width: 200,
-          minHeight: "100vh",
-          background: "#ffffff",
-          borderRight: "1px solid #e8e4df",
+          width: 304,
+          height: 763,
+          background: "rgba(255, 255, 255, 1)",
           display: "flex",
           flexDirection: "column",
+          justifyContent: "space-between",
           flexShrink: 0,
-          position: "sticky",
-          top: 0,
-          height: "100vh",
+          position: "fixed",
+          top: 12,
+          left: 12,
+          borderRadius: 16,
+          padding: 24,
+          boxShadow:
+            "0px 32px 48px 0px rgba(0, 0, 0, 0.2), 0px 16px 48px 0px rgba(0, 0, 0, 0.12)",
           overflow: "hidden",
+          zIndex: 100,
         }}
       >
         {/* Brand */}
@@ -215,15 +143,7 @@ export function Sidebar() {
             }}
           >
             <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-              <rect
-                x="1"
-                y="1"
-                width="12"
-                height="12"
-                rx="2"
-                stroke="currentColor"
-                strokeWidth="1.2"
-              />
+              <rect x="1" y="1" width="12" height="12" rx="2" stroke="currentColor" strokeWidth="1.2" />
               <path d="M5 1v12" stroke="currentColor" strokeWidth="1.2" />
             </svg>
           </button>
@@ -257,10 +177,7 @@ export function Sidebar() {
               alt="AI"
               width={14}
               height={14}
-              style={{
-                objectFit: "contain",
-                filter: "brightness(0) invert(1)",
-              }}
+              style={{ objectFit: "contain", filter: "brightness(0) invert(1)" }}
             />
             AI Teacher&apos;s Toolkit
           </button>
@@ -306,9 +223,7 @@ export function Sidebar() {
         </nav>
 
         {/* Bottom section */}
-        <div
-          style={{ borderTop: "1px solid #f0eeeb", padding: "8px 8px 12px" }}
-        >
+        <div style={{ borderTop: "1px solid #f0eeeb", padding: "8px 8px 12px" }}>
           {/* Settings */}
           <button
             type="button"
@@ -330,20 +245,8 @@ export function Sidebar() {
               letterSpacing: "-0.01em",
             }}
           >
-            <svg
-              width="15"
-              height="15"
-              viewBox="0 0 16 16"
-              fill="none"
-              style={{ color: "#8a8480", flexShrink: 0 }}
-            >
-              <circle
-                cx="8"
-                cy="8"
-                r="2.5"
-                stroke="currentColor"
-                strokeWidth="1.3"
-              />
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" style={{ color: "#8a8480", flexShrink: 0 }}>
+              <circle cx="8" cy="8" r="2.5" stroke="currentColor" strokeWidth="1.3" />
               <path
                 d="M8 1.5v1M8 13.5v1M1.5 8h1M13.5 8h1M3.2 3.2l.7.7M12.1 12.1l.7.7M3.2 12.8l.7-.7M12.1 3.9l.7-.7"
                 stroke="currentColor"
@@ -381,38 +284,10 @@ export function Sidebar() {
             >
               <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
                 <path d="M10 2L2 6v1h16V6L10 2Z" fill="#a09a94" />
-                <rect
-                  x="3"
-                  y="7"
-                  width="3"
-                  height="9"
-                  rx="0.5"
-                  fill="#a09a94"
-                />
-                <rect
-                  x="8.5"
-                  y="7"
-                  width="3"
-                  height="9"
-                  rx="0.5"
-                  fill="#a09a94"
-                />
-                <rect
-                  x="14"
-                  y="7"
-                  width="3"
-                  height="9"
-                  rx="0.5"
-                  fill="#a09a94"
-                />
-                <rect
-                  x="1"
-                  y="16"
-                  width="18"
-                  height="1.5"
-                  rx="0.5"
-                  fill="#a09a94"
-                />
+                <rect x="3" y="7" width="3" height="9" rx="0.5" fill="#a09a94" />
+                <rect x="8.5" y="7" width="3" height="9" rx="0.5" fill="#a09a94" />
+                <rect x="14" y="7" width="3" height="9" rx="0.5" fill="#a09a94" />
+                <rect x="1" y="16" width="18" height="1.5" rx="0.5" fill="#a09a94" />
               </svg>
             </div>
             <div style={{ minWidth: 0 }}>
