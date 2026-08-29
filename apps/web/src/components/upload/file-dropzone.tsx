@@ -42,7 +42,7 @@ export function FileDropzone({ label, file, onFileChange }: FileDropzoneProps) {
   return (
     <div
       style={{
-        background: "rgba(255, 255, 255, 0.5)",
+        
         width: 789,
         height: 205,
         borderRadius: 24,
