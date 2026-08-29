@@ -170,18 +170,22 @@ export function AssessmentUpload() {
           {/* Text */}
           <div style={{ textAlign: "center" }}>
             <p
-              style={{
-                fontSize: 18,
-                fontWeight: 600,
-                color: "#1a1a1a",
-                letterSpacing: "-0.02em",
-                marginBottom: 6,
-              }}
+              className="
+    mb-1.5
+    bg-[linear-gradient(90deg,#303030_20%,#606060_40%,#808080_50%,#606060_60%,#303030_80%)]
+    bg-clip-text
+    text-[30px]
+    font-['Bricolage_Grotesque']
+    font-bold
+    leading-9
+    tracking-[-1.2px]
+    text-transparent
+  "
             >
               Extracting…
             </p>
             <p style={{ fontSize: 13, color: "#8a8480", lineHeight: 1.5 }}>
-              Analyzing questions, answers, and mapping relationships
+              This may take a while
             </p>
           </div>
 
@@ -231,10 +235,21 @@ export function AssessmentUpload() {
 
   //Upload / idle phase
   return (
-    <main className="bg-background" style={{ height: "100vh", maxHeight: 800, overflow: "hidden" }}>
+    <main
+      className="bg-background"
+      style={{ height: "100vh", maxHeight: 800, overflow: "hidden" }}
+    >
       <TopNav />
 
-      <section className="upload-section mx-auto flex flex-col items-center justify-center px-6 py-12" style={{ height: "calc(100vh - 56px)", maxHeight: "744px", minHeight: 0, overflowY: "auto" }}>
+      <section
+        className="upload-section mx-auto flex flex-col items-center justify-center px-6 py-12"
+        style={{
+          height: "calc(100vh - 56px)",
+          maxHeight: "744px",
+          minHeight: 0,
+          overflowY: "auto",
+        }}
+      >
         <div
           className="upload-container"
           style={{
@@ -256,7 +271,7 @@ export function AssessmentUpload() {
                 justifyContent: "center",
                 gap: 8,
                 marginBottom: 0,
-                marginTop:120
+                marginTop: 120,
               }}
             >
               <span
