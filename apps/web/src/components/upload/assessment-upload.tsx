@@ -160,8 +160,8 @@ export function AssessmentUpload() {
               <Image
                 src="/orange_star.png"
                 alt="Processing"
-                width={44}
-                height={44}
+                width={128}
+                height={134}
                 style={{ objectFit: "contain" }}
               />
             </div>
@@ -231,10 +231,10 @@ export function AssessmentUpload() {
 
   //Upload / idle phase
   return (
-    <main className="min-h-screen bg-background">
+    <main className="bg-background" style={{ height: "100vh", maxHeight: 800, overflow: "hidden" }}>
       <TopNav />
 
-      <section className="upload-section mx-auto flex flex-col items-center justify-center px-6 py-12" style={{ minHeight: "calc(100vh - 56px)" }}>
+      <section className="upload-section mx-auto flex flex-col items-center justify-center px-6 py-12" style={{ height: "calc(100vh - 56px)", maxHeight: "744px", minHeight: 0, overflowY: "auto" }}>
         <div
           className="upload-container"
           style={{
@@ -243,7 +243,7 @@ export function AssessmentUpload() {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "flex-start",
-            gap: 20,
+            gap: 16,
           }}
         >
           <div style={{ textAlign: "center" }}>
@@ -256,6 +256,7 @@ export function AssessmentUpload() {
                 justifyContent: "center",
                 gap: 8,
                 marginBottom: 0,
+                marginTop:120
               }}
             >
               <span
@@ -330,7 +331,7 @@ export function AssessmentUpload() {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              gap: 20,
+              gap: 16,
             }}
           >
             {/* Mascot */}
