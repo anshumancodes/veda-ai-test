@@ -157,7 +157,7 @@ export function AssessmentViewer({
         </div>
 
         {/* Stats chips */}
-        <div style={{ display: "flex", gap: 6, flexShrink: 0 }}>
+        <div style={{ display: "flex", gap: 6, flexShrink: 0, overflowX: "auto", maxWidth: "50%" }}>
           <StatChip label="Questions" value={questions.length} color="#4a4540" />
           <StatChip label="Answers" value={answers.length} color="#e8521a" />
           {unmatchedAnswers.length > 0 && (
