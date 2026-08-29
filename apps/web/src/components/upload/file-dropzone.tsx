@@ -42,8 +42,7 @@ export function FileDropzone({ label, file, onFileChange }: FileDropzoneProps) {
   return (
     <div
       style={{
-        
-        width: 789,
+        width: "100%",
         height: 205,
         borderRadius: 24,
         padding: 12,
@@ -62,7 +61,7 @@ export function FileDropzone({ label, file, onFileChange }: FileDropzoneProps) {
         onDragLeave={() => setIsDragging(false)}
         onDrop={handleDrop}
         style={{
-          width: 374.5,
+          width: "100%",
           height: 181,
           borderRadius: 20,
           padding: 10,
