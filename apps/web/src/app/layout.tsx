@@ -23,9 +23,20 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-row">
         <Sidebar />
-        <div className="flex-1 flex flex-col min-w-0 min-h-screen">
+        <div id="layout-content" className="flex-1 flex flex-col min-w-0 min-h-screen">
           {children}
         </div>
+        <style>{`
+          /* Offset content from the fixed sidebar on desktop */
+          #layout-content {
+            padding-left: 328px;
+          }
+          @media (max-width: 1023px) {
+            #layout-content {
+              padding-left: 0;
+            }
+          }
+        `}</style>
       </body>
     </html>
   );
