@@ -40,7 +40,19 @@ export function FileDropzone({ label, file, onFileChange }: FileDropzoneProps) {
   }
 
   return (
-    <div>
+    <div
+      style={{
+        background: "rgba(255, 255, 255, 0.5)",
+        width: 789,
+        height: 205,
+        borderRadius: 24,
+        padding: 12,
+        gap: 24,
+        display: "flex",
+        flexDirection: "column",
+        boxSizing: "border-box",
+      }}
+    >
       <div
         role="button"
         tabIndex={0}
@@ -50,29 +62,22 @@ export function FileDropzone({ label, file, onFileChange }: FileDropzoneProps) {
         onDragLeave={() => setIsDragging(false)}
         onDrop={handleDrop}
         style={{
-          background: isDragging
-            ? "#fff4f0"
-            : file
-            ? "#fffaf8"
-            : "#ffffff",
-          border: `2px dashed ${
-            isDragging ? "#e8521a" : file ? "rgba(232, 82, 26, 0.5)" : "#ddd8d2"
-          }`,
-          borderRadius: 16,
-          padding: "32px 20px",
+          width: 374.5,
+          height: 181,
+          borderRadius: 20,
+          padding: 10,
+          gap: 10,
+          background: "rgba(255, 255, 255, 1)",
+          backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='20' ry='20' stroke='${
+            isDragging ? "%23e8521a" : file ? "%23e8521a" : "rgba(206%2c206%2c206%2c1)".replace(/,/g, "%2c")
+          }' stroke-width='1.5' stroke-dasharray='6%2c 6' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          gap: 10,
           cursor: "pointer",
-          transition: "border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease",
-          minHeight: 160,
-          boxShadow: file
-            ? "0 0 0 3px rgba(232, 82, 26, 0.08), 0 4px 20px rgba(0,0,0,0.05)"
-            : isDragging
-            ? "0 0 0 3px rgba(232, 82, 26, 0.12)"
-            : "0 2px 12px rgba(0,0,0,0.04)",
+          transition: "background-image 0.2s ease",
+          boxSizing: "border-box",
           outline: "none",
         }}
       >
