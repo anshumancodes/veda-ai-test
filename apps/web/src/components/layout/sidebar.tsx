@@ -140,20 +140,16 @@ export function Sidebar() {
       <aside
         id="app-sidebar"
         style={{
-          width: 304,
-          height: 763,
-          background: "rgba(255, 255, 255, 1)",
+          width: 200,
+          minHeight: "100vh",
+          background: "#ffffff",
+          borderRight: "1px solid #e8e4df",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between",
           flexShrink: 0,
-          position: "absolute",
-          top: 12,
-          left: 12,
-          borderRadius: 16,
-          padding: 24,
-          boxShadow:
-            "0px 16px 48px 0px rgba(0, 0, 0, 0.12), 0px 32px 48px 0px rgba(0, 0, 0, 0.2)",
+          position: "sticky",
+          top: 0,
+          height: "100vh",
           overflow: "hidden",
         }}
       >
