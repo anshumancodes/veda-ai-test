@@ -109,7 +109,7 @@ export function AssessmentUpload() {
   // Processing phase — full-screen loading
   if (phase === "processing") {
     return (
-      <main className="min-h-screen bg-background">
+      <main className="min-h-screen bg-amber-100">
         <TopNav />
         <section
           style={{
@@ -420,8 +420,7 @@ export function AssessmentUpload() {
       shadow-[0px_4px_5px_0px_rgba(0,0,0,0.12)]
       transition-all
       hover:bg-[#3a3a3a]
-      disabled:cursor-not-allowed
-      disabled:opacity-50
+
     "
               >
                 <span>Start Mapping</span>
