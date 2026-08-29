@@ -37,14 +37,15 @@ export default function TopNav({
 
   return (
     <>
-      {/* ── Desktop nav (≥ 768 px) ───────────────────────────────────── */}
+      {/* Desktop nav (≥ 768 px) */}
       <nav
         className="top-nav-desktop"
         style={{
           position: "absolute",
           top: "12px",
           left: "327px",
-          width: "1400px",
+          right: "16px",
+          width: "auto",
           height: "56px",
           borderRadius: "16px",
           paddingLeft: "24px",
@@ -52,8 +53,8 @@ export default function TopNav({
           gap: "10px",
           background: "rgba(255, 255, 255, 0.75)",
           opacity: 1,
-          rotate: "0deg",
           display: "flex",
+          alignItems: "center",
           justifyContent: "space-between",
           backdropFilter: "blur(12px)",
           WebkitBackdropFilter: "blur(12px)",
@@ -443,6 +444,12 @@ export default function TopNav({
       <style>{`
         .top-nav-desktop { display: flex !important; }
         .top-nav-mobile  { display: none  !important; }
+
+        @media (max-width: 1023px) {
+          .top-nav-desktop {
+            left: 88px !important;
+          }
+        }
 
         @media (max-width: 767px) {
           .top-nav-desktop { display: none  !important; }
