@@ -109,7 +109,7 @@ export function AssessmentUpload() {
   // Processing phase — full-screen loading
   if (phase === "processing") {
     return (
-      <main className="min-h-screen bg-amber-100">
+      <main className="min-h-screen bg-[linear-gradient(to_bottom,#ffffff_0%,#f8f7f6_35%,#e9e7e5_70%,#dcd9d6_100%)]">
         <TopNav />
         <section
           style={{
@@ -234,11 +234,11 @@ export function AssessmentUpload() {
     <main className="min-h-screen bg-background">
       <TopNav />
 
-      <section className="mx-auto flex min-h-[calc(100vh-56px)] flex-col items-center justify-center px-6 py-12">
+      <section className="upload-section mx-auto flex flex-col items-center justify-center px-6 py-12" style={{ minHeight: "calc(100vh - 56px)" }}>
         <div
+          className="upload-container"
           style={{
             width: 789,
-            height: 475,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -248,6 +248,7 @@ export function AssessmentUpload() {
         >
           <div style={{ textAlign: "center" }}>
             <h1
+              className="upload-heading"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -259,8 +260,6 @@ export function AssessmentUpload() {
             >
               <span
                 style={{
-                  width: 130,
-                  height: 48,
                   display: "inline-flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -282,8 +281,6 @@ export function AssessmentUpload() {
               </span>
               <span
                 style={{
-                  width: 613,
-                  height: 56,
                   display: "inline-flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -309,8 +306,6 @@ export function AssessmentUpload() {
           </div>
           <p
             style={{
-              width: 269,
-              height: 28,
               fontFamily: "'Bricolage Grotesque', sans-serif",
               fontWeight: 400,
               fontStyle: "normal",
@@ -361,13 +356,13 @@ export function AssessmentUpload() {
 
             {/* Upload cards */}
             <div
+              className="dropzone-row"
               style={{
                 background: "rgba(255, 255, 255, 0.5)",
-                width: 789,
-                height: 205,
+                width: 823,
                 borderRadius: 24,
                 padding: 12,
-                gap: 24,
+                gap: 10,
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
@@ -456,6 +451,26 @@ export function AssessmentUpload() {
             }
             @keyframes spin {
               to { transform: rotate(360deg); }
+            }
+
+            /* ── Responsive upload layout ───────────────────────── */
+            @media (max-width: 767px) {
+              .upload-section {
+                min-height: calc(100vh - 56px);
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+              }
+              .upload-container {
+                width: 100% !important;
+              }
+              .upload-heading span {
+                font-size: 28px !important;
+              }
+              .dropzone-row {
+                width: 100% !important;
+                height: auto !important;
+                flex-direction: column !important;
+              }
             }
           `}</style>
           </div>
