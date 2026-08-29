@@ -21,8 +21,6 @@ interface ExtractionResult {
   answerPages: DocumentPage[];
 }
 
-
-
 export function AssessmentUpload() {
   const [phase, setPhase] = useState<Phase>("idle");
 
@@ -332,18 +330,25 @@ export function AssessmentUpload() {
             Upload both files to get started
           </p>
 
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 20 }}>
-          {/* Mascot */}
-          <div className="flex justify-center">
-            <div
-              style={{
-                position: "relative",
-                width: 137,
-                height: 138,
-              }}
-            >
-              {/* Outer glow rings removed */}
-           
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 20,
+            }}
+          >
+            {/* Mascot */}
+            <div className="flex justify-center">
+              <div
+                style={{
+                  position: "relative",
+                  width: 137,
+                  height: 138,
+                }}
+              >
+                {/* Outer glow rings removed */}
+
                 <Image
                   src="/ved.png"
                   alt="Teacher mascot"
@@ -351,119 +356,100 @@ export function AssessmentUpload() {
                   height={138}
                   style={{ objectFit: "cover" }}
                 />
-            
+              </div>
             </div>
-          </div>
 
-          {/* Upload cards */}
-          <div
-            style={{
-              background: "rgba(255, 255, 255, 0.5)",
-              width: 789,
-              height: 205,
-              borderRadius: 24,
-              padding: 12,
-              gap: 24,
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              boxSizing: "border-box",
-            }}
-          >
-            <FileDropzone
-              label="Question Paper"
-              file={questionPaper}
-              onFileChange={setQuestionPaper}
-            />
-            <FileDropzone
-              label="Answer Sheet"
-              file={answerSheet}
-              onFileChange={setAnswerSheet}
-            />
-          </div>
-
-          {/* Error message */}
-          {errorMsg && (
+            {/* Upload cards */}
             <div
               style={{
-                marginBottom: 16,
-                padding: "10px 14px",
-                borderRadius: 10,
-                background: "#fef2f2",
-                border: "1px solid #fecaca",
-                color: "#dc2626",
-                fontSize: 13,
-              }}
-            >
-              {errorMsg}
-            </div>
-          )}
-
-          {/* Start Mapping button */}
-          <div className="flex flex-col items-center gap-3">
-            <button
-              type="button"
-              id="start-mapping-btn"
-              disabled={!canAnalyze}
-              onClick={handleAnalyze}
-              style={{
-                display: "inline-flex",
+                background: "rgba(255, 255, 255, 0.5)",
+                width: 789,
+                height: 205,
+                borderRadius: 24,
+                padding: 12,
+                gap: 24,
+                display: "flex",
+                flexDirection: "row",
                 alignItems: "center",
-                gap: 8,
-                width: 161,
-                height: 44,
-                paddingTop: 12,
-                paddingRight: 20,
-                paddingBottom: 12,
-                paddingLeft: 24,
-                borderRadius: 64,
-                border: `2px solid ${canAnalyze ? "transparent" : "rgba(255,255,255,0.08)"}`,
-                background: canAnalyze
-                    ? "linear-gradient(135deg, #e8521a, #ff7a45)"
-                    : "rgba(48, 48, 48, 1)",
-                color: canAnalyze ? "#fff" : "#8a8480",
-                fontSize: 14,
-                fontWeight: 600,
-                cursor: canAnalyze ? "pointer" : "not-allowed",
-                transition: "all 0.2s ease",
-                boxShadow: canAnalyze
-                    ? "0 4px 16px rgba(232, 82, 26, 0.35)"
-                    : "none",
-                letterSpacing: "-0.01em",
                 boxSizing: "border-box",
               }}
             >
-              Start Mapping
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+              <FileDropzone
+                label="Question Paper"
+                file={questionPaper}
+                onFileChange={setQuestionPaper}
+              />
+              <FileDropzone
+                label="Answer Sheet"
+                file={answerSheet}
+                onFileChange={setAnswerSheet}
+              />
+            </div>
+
+            {/* Error message */}
+            {errorMsg && (
+              <div
+                style={{
+                  marginBottom: 16,
+                  padding: "10px 14px",
+                  borderRadius: 10,
+                  background: "#fef2f2",
+                  border: "1px solid #fecaca",
+                  color: "#dc2626",
+                  fontSize: 13,
+                }}
               >
-                <path
-                  d="M3 8H13M13 8L9 4M13 8L9 12"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
+                {errorMsg}
+              </div>
+            )}
 
-            <p
-              style={{
-                fontSize: 12,
-                color: "#a09a94",
-                textAlign: "center",
-              }}
-            >
-              Once both files are uploaded, you&apos;ll be able to map answers
-              with questions
-            </p>
-          </div>
+            {/* Start Mapping button */}
+            <div className="flex flex-col items-center gap-3">
+              <button
+                type="button"
+                id="start-mapping-btn"
+                disabled={!canAnalyze}
+                onClick={handleAnalyze}
+                className="
+      flex h-11 w-[161px] items-center justify-center
+      gap-2 rounded-[64px]
+      border-2 border-white/[0.15]
+      bg-[#303030]
+      py-3 pl-6 pr-5
+      text-sm font-medium text-white
+      shadow-[0px_4px_5px_0px_rgba(0,0,0,0.12)]
+      transition-all
+      hover:bg-[#3a3a3a]
+      disabled:cursor-not-allowed
+      disabled:opacity-50
+    "
+              >
+                <span>Start Mapping</span>
 
-          <style>{`
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3 8H13M13 8L9 4M13 8L9 12"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+
+              <p className="text-center text-[12px] text-[#a09a94]">
+                Once both files are uploaded, you&apos;ll be able to map answers
+                with questions
+              </p>
+            </div>
+
+            <style>{`
             @keyframes ping-slow {
               0%   { transform: scale(1);    opacity: 0.8; }
               50%  { transform: scale(1.15); opacity: 0.4; }
