@@ -7,8 +7,7 @@ import { processDocument } from "@/lib/document";
 import type { Question, Answer, AnswerMapping } from "@repo/ai";
 import type { DocumentPage } from "@repo/types/types";
 import { AssessmentViewer } from "@/components/viewer/assessment-viewer";
-import { TopNav } from "@/components/layout/top-nav";
-
+import TopNav from "@/components/layout/top-nav";
 
 // idle → processing → viewer
 //          ↑____________↓  (back button resets to idle)
@@ -237,46 +236,114 @@ export function AssessmentUpload() {
     <main className="min-h-screen bg-background">
       <TopNav />
 
-      <section className="mx-auto flex min-h-[calc(100vh-56px)]  flex-col items-center justify-center px-6 py-12">
-        <div className="mb-8 max-w-2xl text-center">
-          <h1 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">
-            Upload{" "}
-            <span
+      <section className="mx-auto flex min-h-[calc(100vh-56px)] flex-col items-center justify-center px-6 py-12">
+        <div
+          style={{
+            width: 789,
+            height: 475,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            gap: 20,
+          }}
+        >
+          <div style={{ textAlign: "center" }}>
+            <h1
               style={{
-                color: "#e8521a",
-                backgroundColor: "#fff0eb",
-                padding: "0 8px 3px",
-                borderRadius: "6px",
+                display: "inline-flex",
+                alignItems: "center",
+                flexWrap: "wrap",
+                justifyContent: "center",
+                gap: 8,
+                marginBottom: 0,
               }}
             >
-              Question Paper &amp; Answer Sheets
-            </span>
-          </h1>
-          <p className="text-sm text-muted-foreground">
+              <span
+                style={{
+                  width: 130,
+                  height: 48,
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontFamily: "'Bricolage Grotesque', sans-serif",
+                  fontWeight: 700,
+                  fontStyle: "normal",
+                  fontSize: 40,
+                  lineHeight: "120%",
+                  letterSpacing: "-0.04em",
+                  verticalAlign: "middle",
+                  background: "rgba(43, 43, 43, 1)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  color: "rgba(43, 43, 43, 1)",
+                }}
+              >
+                Upload
+              </span>
+              <span
+                style={{
+                  width: 613,
+                  height: 56,
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 10,
+                  borderRadius: 8,
+                  paddingTop: 4,
+                  paddingRight: 8,
+                  paddingBottom: 4,
+                  paddingLeft: 8,
+                  background: "rgba(255, 147, 80, 0.15)",
+                  fontFamily: "'Bricolage Grotesque', sans-serif",
+                  fontWeight: 700,
+                  fontStyle: "normal",
+                  fontSize: 40,
+                  lineHeight: "120%",
+                  letterSpacing: "-0.04em",
+                  color: "rgba(43, 43, 43, 1)",
+                }}
+              >
+                Question Paper &amp; Answer Sheets
+              </span>
+            </h1>
+          </div>
+          <p
+            style={{
+              width: 269,
+              height: 28,
+              fontFamily: "'Bricolage Grotesque', sans-serif",
+              fontWeight: 400,
+              fontStyle: "normal",
+              fontSize: 20,
+              lineHeight: "140%",
+              letterSpacing: "-0.04em",
+              textAlign: "center",
+              verticalAlign: "middle",
+              background: "rgba(48, 48, 48, 1)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              color: "rgba(48, 48, 48, 1)",
+              margin: 0,
+            }}
+          >
             Upload both files to get started
           </p>
-        </div>
 
-        <div className="w-full max-w-3xl">
+          <div className="w-full max-w-3xl">
           {/* Mascot */}
           <div className="mb-8 flex justify-center mb-20">
             <div
               style={{
                 position: "relative",
-                width: 96,
-                height: 96,
+                width: 137,
+                height: 138,
               }}
             >
               {/* Outer glow rings */}
-              <div
-                style={{
-                  position: "absolute",
-                  inset: -16,
-                  borderRadius: "50%",
-                  border: "1.5px solid rgba(232, 82, 26, 0.15)",
-                  animation: "ping-slow 3s cubic-bezier(0,0,0.2,1) infinite",
-                }}
-              />
+            
               <div
                 style={{
                   position: "absolute",
@@ -285,59 +352,31 @@ export function AssessmentUpload() {
                   border: "1.5px solid rgba(232, 82, 26, 0.25)",
                 }}
               />
-              {/* Dot accents */}
-              {[0, 60, 120, 180, 240, 300].map((deg) => (
-                <div
-                  key={deg}
-                  style={{
-                    position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                    width: 6,
-                    height: 6,
-                    borderRadius: "50%",
-                    background: "#e8521a",
-                    opacity: 0.6,
-                    transform: `rotate(${deg}deg) translateX(54px) translateY(-50%)`,
-                  }}
-                />
-              ))}
-              {/* Avatar circle */}
-              <div
-                style={{
-                  width: 96,
-                  height: 96,
-                  borderRadius: "50%",
-                 
-                  background: "linear-gradient(135deg, #fde4d5 0%, #ffc4a0 100%)",
-                  border: "3px solid #fff",
-                  boxShadow: "0 4px 24px rgba(232, 82, 26, 0.2)",
-                  overflow: "hidden",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  position: "relative",
-                }}
-              >
+           
                 <Image
-                  src="/ved.jpeg"
+                  src="/ved.png"
                   alt="Teacher mascot"
-                  width={96}
-                  height={96}
+                  width={137}
+                  height={138}
                   style={{ objectFit: "cover" }}
                 />
-              </div>
+            
             </div>
           </div>
 
           {/* Upload cards */}
           <div
             style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: 20,
-              marginTop: 40,
-              marginBottom: 32,
+              background: "rgba(255, 255, 255, 0.5)",
+              width: 789,
+              height: 205,
+              borderRadius: 24,
+              padding: 12,
+              gap: 24,
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              boxSizing: "border-box",
             }}
           >
             <FileDropzone
@@ -380,12 +419,17 @@ export function AssessmentUpload() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 8,
-                padding: "10px 24px",
-                borderRadius: 999,
-                border: "none",
+                width: 161,
+                height: 44,
+                paddingTop: 12,
+                paddingRight: 20,
+                paddingBottom: 12,
+                paddingLeft: 24,
+                borderRadius: 64,
+                border: `2px solid ${canAnalyze ? "transparent" : "rgba(255,255,255,0.08)"}`,
                 background: canAnalyze
                     ? "linear-gradient(135deg, #e8521a, #ff7a45)"
-                    : "#d4cfc9",
+                    : "rgba(48, 48, 48, 1)",
                 color: canAnalyze ? "#fff" : "#8a8480",
                 fontSize: 14,
                 fontWeight: 600,
@@ -395,6 +439,7 @@ export function AssessmentUpload() {
                     ? "0 4px 16px rgba(232, 82, 26, 0.35)"
                     : "none",
                 letterSpacing: "-0.01em",
+                boxSizing: "border-box",
               }}
             >
               Start Mapping
@@ -437,6 +482,7 @@ export function AssessmentUpload() {
               to { transform: rotate(360deg); }
             }
           `}</style>
+          </div>
         </div>
       </section>
     </main>
