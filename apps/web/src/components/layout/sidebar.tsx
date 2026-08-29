@@ -373,7 +373,10 @@ export function Sidebar() {
         </aside>
 
         <style>{`
-          @media (max-width: 600px) {
+          @media (max-width: 1023px) and (min-width: 768px) {
+            #app-sidebar { display: none !important; }
+          }
+          @media (max-width: 767px) {
             #app-sidebar { display: none !important; }
           }
         `}</style>
@@ -697,7 +700,10 @@ export function Sidebar() {
 
       {/* Responsive styles */}
       <style>{`
-        @media (max-width: 600px) {
+        @media (max-width: 1023px) and (min-width: 768px) {
+          #app-sidebar { display: none !important; }
+        }
+        @media (max-width: 767px) {
           #app-sidebar { display: none !important; }
         }
       `}</style>
