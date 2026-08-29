@@ -205,7 +205,7 @@ export function Sidebar() {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                gap: 4,
+                gap: 8,
                 width: "100%",
               }}
             >
@@ -215,16 +215,21 @@ export function Sidebar() {
                   type="button"
                   title={item.label}
                   style={{
-                    width: "100%",
+                    width: 44,
+                    height: 40,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    padding: "8px 0",
-                    borderRadius: 9,
+                    paddingTop: 9,
+                    paddingRight: 12,
+                    paddingBottom: 9,
+                    paddingLeft: 12,
+                    borderRadius: 8,
                     border: "none",
                     background: item.active ? "#fff4f0" : "transparent",
                     color: item.active ? "#e8521a" : "#8a8480",
                     cursor: "pointer",
+                    opacity: 1,
                     transition: "background 0.15s, color 0.15s",
                   }}
                 >
@@ -249,16 +254,21 @@ export function Sidebar() {
               type="button"
               title="Settings"
               style={{
-                width: "100%",
+                width: 44,
+                height: 40,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                padding: "8px 0",
-                borderRadius: 9,
+                paddingTop: 9,
+                paddingRight: 12,
+                paddingBottom: 9,
+                paddingLeft: 12,
+                borderRadius: 8,
                 border: "none",
                 background: "transparent",
                 color: "#8a8480",
                 cursor: "pointer",
+                opacity: 1,
               }}
             >
               <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
