@@ -332,9 +332,9 @@ export function AssessmentUpload() {
             Upload both files to get started
           </p>
 
-          <div className="w-full max-w-3xl">
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 20 }}>
           {/* Mascot */}
-          <div className="mb-8 flex justify-center mb-20">
+          <div className="flex justify-center">
             <div
               style={{
                 position: "relative",
