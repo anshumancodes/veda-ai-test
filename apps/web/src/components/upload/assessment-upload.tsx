@@ -342,16 +342,7 @@ export function AssessmentUpload() {
                 height: 138,
               }}
             >
-              {/* Outer glow rings */}
-            
-              <div
-                style={{
-                  position: "absolute",
-                  inset: -8,
-                  borderRadius: "50%",
-                  border: "1.5px solid rgba(232, 82, 26, 0.25)",
-                }}
-              />
+              {/* Outer glow rings removed */}
            
                 <Image
                   src="/ved.png"
