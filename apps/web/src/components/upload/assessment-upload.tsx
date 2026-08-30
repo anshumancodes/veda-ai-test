@@ -146,7 +146,6 @@ export function AssessmentUpload() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                animation: "star-breathe 2s ease-in-out infinite",
               }}
             >
               <Image
