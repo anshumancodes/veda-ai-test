@@ -87,12 +87,20 @@ export function AnswerPageViewer({
             {/* Page label */}
             <div
               style={{
-                padding: "8px 12px",
-                borderBottom: "1px solid #f0eeeb",
+                
+                height: 64,
                 display: "flex",
                 alignItems: "center",
-                gap: 8,
-                background: "#fafaf9",
+                justifyContent: "space-between",
+                transform: "rotate(0deg)",
+                opacity: 1,
+                paddingTop: 12,
+                paddingRight: 24,
+                paddingBottom: 12,
+                paddingLeft: 24,
+                borderBottom: "1.25px solid rgba(0, 0, 0, 0.1)",
+                background: "rgba(48, 48, 48, 1)",
+                boxSizing: "border-box",
               }}
             >
               <span
