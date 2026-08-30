@@ -124,15 +124,7 @@ export function AssessmentUpload() {
           {/* Animated star */}
           <div style={{ position: "relative" }}>
             {/* Outer glow rings */}
-            <div
-              style={{
-                position: "absolute",
-                inset: -28,
-                borderRadius: "50%",
-                border: "1.5px solid rgba(232, 82, 26, 0.12)",
-                animation: "ring-pulse 2.5s ease-in-out infinite",
-              }}
-            />
+        
             <div
               style={{
                 position: "absolute",
