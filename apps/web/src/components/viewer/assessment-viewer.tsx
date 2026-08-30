@@ -171,27 +171,41 @@ export function AssessmentViewer({
         <div
           style={{
             flexShrink: 0,
-            padding: "8px 16px",
-            background: "rgba(255,255,255,0.92)",
-            backdropFilter: "blur(12px)",
-            WebkitBackdropFilter: "blur(12px)",
-            borderBottom: "1px solid #e8e4df",
             display: "flex",
-            gap: 8,
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "8px 16px",
+            background: "transparent",
           }}
         >
-          <MobileTabButton
-            label="Questions"
-            count={questions.length}
-            isActive={mobileTab === "questions"}
-            onClick={() => setMobileTab("questions")}
-          />
-          <MobileTabButton
-            label="Answer Sheet"
-            count={answerPages.length}
-            isActive={mobileTab === "answer"}
-            onClick={() => setMobileTab("answer")}
-          />
+          <div
+            style={{
+              width: 369,
+              height: 54,
+              padding: 4,
+              borderRadius: 6414,
+              background: "rgba(246, 246, 246, 1)",
+              display: "flex",
+              alignItems: "center",
+              gap: 0,
+              boxSizing: "border-box",
+            }}
+          >
+            <MobileTabButton
+              label="Questions"
+              count={questions.length}
+              isActive={mobileTab === "questions"}
+              variant="question"
+              onClick={() => setMobileTab("questions")}
+            />
+            <MobileTabButton
+              label="Answer Sheet"
+              count={answerPages.length}
+              isActive={mobileTab === "answer"}
+              variant="answer"
+              onClick={() => setMobileTab("answer")}
+            />
+          </div>
         </div>
       )}
 
@@ -298,38 +312,49 @@ function MobileTabButton({
   label,
   count,
   isActive,
+  variant,
   onClick,
 }: {
   label: string;
   count: number;
   isActive: boolean;
+  variant: "question" | "answer";
   onClick: () => void;
 }) {
+  const paddingH = variant === "question" ? "12px 24px" : "12px 16px";
+  const bgColor = isActive ? "rgba(48, 48, 48, 1)" : "transparent";
+  const borderStyle = isActive ? "1px solid rgba(123, 123, 123, 1)" : "none";
   return (
     <button
       type="button"
       onClick={onClick}
       style={{
-        flex: 1,
+        width: 180.5,
+        height: 46,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        gap: 6,
-        height: 36,
-        borderRadius: 10,
-        border: isActive ? "1.5px solid rgba(232, 82, 26, 0.3)" : "1.5px solid #e8e4df",
-        background: isActive ? "#fff8f5" : "#f7f5f2",
+        gap: 4,
+        borderRadius: 64,
+        border: borderStyle,
+        background: bgColor,
         cursor: "pointer",
-        transition: "background 0.15s, border-color 0.15s",
-        padding: "0 12px",
+        padding: paddingH,
+        boxShadow: isActive ? "0px 32px 48px 0px rgba(0, 0, 0, 0.2), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)" : "none",
+        boxSizing: "border-box",
+        flexShrink: 0,
+        opacity: 1,
+        transition: "opacity 0.15s",
       }}
     >
       <span
         style={{
           fontSize: 13,
           fontWeight: isActive ? 600 : 500,
-          color: isActive ? "#e8521a" : "#6b6560",
-          transition: "color 0.15s",
+          color: isActive ? "#ffffff" : "rgba(48, 48, 48, 1)",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis",
         }}
       >
         {label}
@@ -338,10 +363,11 @@ function MobileTabButton({
         style={{
           fontSize: 10,
           fontWeight: 600,
-          color: isActive ? "#e8521a" : "#a09a94",
-          background: isActive ? "rgba(232,82,26,0.1)" : "#ece9e5",
+          color: isActive ? "rgba(255,255,255,0.9)" : "rgba(48,48,48,0.5)",
+          background: isActive ? "rgba(255,255,255,0.2)" : "rgba(48,48,48,0.08)",
           padding: "1px 6px",
           borderRadius: 99,
+          flexShrink: 0,
           transition: "background 0.15s, color 0.15s",
         }}
       >
